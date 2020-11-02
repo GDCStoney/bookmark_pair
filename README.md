@@ -1,5 +1,7 @@
 # Bookmark Manager README
 
+[Challenge Analysis](/docs/)
+
 ## Challenge
 You're going to build a bookmark manager.
 - A bookmark manager is a website to maintain a collection of bookmarks (URLs).
