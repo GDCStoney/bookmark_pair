@@ -8,4 +8,4 @@ You're going to build a bookmark manager.
 - You can browse bookmarks other users have added.
 - You can comment on the bookmarks.
 
-[Manager recommended interface](/public/images/BMInterface.png)
+![Manager recommended interface](/public/images/BMInterface.png)
