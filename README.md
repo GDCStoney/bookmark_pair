@@ -6,6 +6,8 @@
 
 [Interface Requirements](/docs/interface.md)
 
+[Config and setup information](/docs/system_setup.md)
+
 ## Challenge
 You're going to build a bookmark manager.
 - A bookmark manager is a website to maintain a collection of bookmarks (URLs).
