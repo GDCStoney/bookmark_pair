@@ -1,6 +1,6 @@
 # Domain Model - Bookmark Challenge
 
-[README file](README.md)
+[README file](/README.md)
 
 ## Minimum Functionality Solution
 - single user role - no hierarchy

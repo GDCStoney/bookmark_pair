@@ -1,6 +1,6 @@
 # Setup and configuration information for Bookmarks Challenge
 
-[README file](README.md)
+[README file](/README.md)
 ## Database Creation
 - install 'psql' - postgresql
   - ``` brew install postgresql ```

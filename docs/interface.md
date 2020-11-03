@@ -1,6 +1,6 @@
 # Interface model / design requirements
 
-[README file](README.md)
+[README file](/README.md)
 
 ## core requirements
 - website to maintain a collection of bookmarks

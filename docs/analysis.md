@@ -1,6 +1,6 @@
 # Bookmark Manager Challenge Analysis
 
-[README file](README.md)
+[README file](/README.md)
 
 ## User Stories
 no formatted user stories given as part of Challenge - given a "specification":
