@@ -1,5 +1,7 @@
 # Bookmark Manager Challenge Analysis
 
+[README file](README.md)
+
 ## User Stories
 no formatted user stories given as part of Challenge - given a "specification":
 ```
@@ -68,5 +70,3 @@ I would like to add a comment to the bookmark.
     - extension opportunity - filtering / colour coding / etc
   - no indication of single or multiple comments - initial assumption - single shared editable comment area
     - extension opportunity - separate comment / date ordered / rating / etc.
-
-    

@@ -1,5 +1,6 @@
 # Setup and configuration information for Bookmarks Challenge
 
+[README file](README.md)
 ## Database Creation
 - install 'psql' - postgresql
   - ``` brew install postgresql ```
@@ -16,5 +17,3 @@
   - ``` psql=# \c bookmark_manager ```
 - run the table setup query
   - [01_create_bookmarks_table.sql](/db/migrations/01_create_bookmarks_table.sql)
-
-  

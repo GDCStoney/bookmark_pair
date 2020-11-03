@@ -1,5 +1,7 @@
 # Domain Model - Bookmark Challenge
 
+[README file](README.md)
+
 ## Minimum Functionality Solution
 - single user role - no hierarchy
 - single comment area
@@ -29,7 +31,7 @@
   - password
 
 ### Interface
-- functionality 
+- functionality
   - sign in
   - browse
   - add bookmark
