@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 feature 'User Interface available' do
   scenario '- initial screen with title is visible' do
     visit '/'

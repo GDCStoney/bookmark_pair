@@ -1,6 +1,10 @@
 # Bookmark Manager README
 
-[Challenge Analysis](/docs/)
+[Challenge Analysis](/docs/analysis.md)
+
+[Domain Model](/docs/domain_model.md)
+
+[Interface Requirements](/docs/interface.md)
 
 ## Challenge
 You're going to build a bookmark manager.
