@@ -17,3 +17,7 @@
   - ``` psql=# \c bookmark_manager ```
 - run the table setup query
   - [01_create_bookmarks_table.sql](/db/migrations/01_create_bookmarks_table.sql)
+
+- identical database setup for 'test' with a database name of 'bookmark_manager_test'
+
+- identical database setup for 'dev' with a database name of 'bookmark_manager_dev'

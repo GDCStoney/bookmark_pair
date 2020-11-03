@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'sinatra'
-require './lib/bookmark'
 
 # main controller class object
 class BookmarkManager < Sinatra::Base
@@ -13,6 +12,15 @@ class BookmarkManager < Sinatra::Base
     @bookmarks = Bookmark.all
 
     erb :'bookmarks/index'
+  end
+
+  post '/bookmarks' do
+    Bookmark.create(url: params[:url])
+    redirect '/bookmarks'
+  end
+
+  get '/bookmarks/new' do
+    erb :'bookmarks/new'
   end
 
   run! if app_file == $PROGRAM_NAME
