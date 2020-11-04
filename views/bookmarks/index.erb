@@ -2,9 +2,9 @@
 <head></head>
 <body>
   <ul>
-    <% @bookmarks.each do |bookmark| %>
-      <li><%= bookmark %></li>
-    <% end %>
+  <% @bookmarks.each do |bookmark| %>
+    <li><a href='<%= bookmark.url %>'><%= bookmark.title %></a></li><br>
+  <% end %>
   </ul>
 </body>
 </html>
