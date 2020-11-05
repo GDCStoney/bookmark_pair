@@ -20,7 +20,7 @@ class Bookmark
   end
 
   def self.delete(id:)
-    result = connection_get.exec("DELETE FROM bookmarks
+    connection_get.exec("DELETE FROM bookmarks
       WHERE id=#{id} RETURNING id, title, url;")
   end
 
@@ -36,13 +36,11 @@ class Bookmark
     Bookmark.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
   end
 
-    def initialize(id:, title:, url:)
-      @id = id
-      @title = title
-      @url = url
-    end
-
-  private
+  def initialize(id:, title:, url:)
+    @id = id
+    @title = title
+    @url = url
+  end
 
   def self.connection_get
     if ENV['ENVIRONMENT'] == 'test'

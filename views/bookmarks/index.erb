@@ -1,11 +1,11 @@
 <html>
 <head></head>
 <body>
-  <table>
+  <table id="bookmarks">
     <tr>
       <td style="width:40px; padding-top:10px; padding-bottom:10px">
         <form style="margin-block-end:0px" action='/bookmarks/new'>
-          <input type='submit' value='Add'>
+          <input type='submit' id='add' value='Add'>
         </form>
       </td>
     </tr>
@@ -14,13 +14,13 @@
       <td style="width:40px; padding-top:10px; padding-bottom:10px">
         <form style="margin-block-end:0px" action='/bookmarks/delete' method='post'>
           <input type='hidden' name='id' value='<%= bookmark.id %>'>
-          <input type='submit' value='Del'>
+          <input type='submit' name="del" id="<%= 'del_' + bookmark.id.to_s %>" value='Del'>
         </form>
       </td>
       <td style="width:40px; padding-top:10px; padding-bottom:10px">
         <form style="margin-block-end:0px" action='/bookmarks/update' method='get'>
           <input type='hidden' name='id' value='<%= bookmark.id %>'>
-          <input type='submit' value='Edit'>
+          <input type='submit' name='edit' id="<%= 'edit_' + bookmark.id %>" value='Edit'>
         </form>
       </td>
       <td style="padding-top:10px; padding-bottom:10px">
