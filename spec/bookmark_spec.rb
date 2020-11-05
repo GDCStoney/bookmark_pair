@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
+require 'pg'
 require 'bookmark'
 require 'database_helpers'
 
 RSpec.describe Bookmark do
   describe 'class method #all' do
     it 'returns all bookmarks' do
-      connection = PG.connect(dbname: 'bookmark_manager_test')
+      connection = PG.connect(dbname: 'bookmark_manager_test', user: 'postgres')
 
       # Add the test data
       connection.exec("INSERT INTO bookmarks (id, title, url)

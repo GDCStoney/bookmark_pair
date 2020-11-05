@@ -7,9 +7,9 @@ class Bookmark
 
   def self.all
     if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'bookmark_manager_test')
+      connection = PG.connect(dbname: 'bookmark_manager_test', user: 'postgres')
     else
-      connection = PG.connect(dbname: 'bookmark_manager')
+      connection = PG.connect(dbname: 'bookmark_manager', user: 'postgres')
     end
     result = connection.exec('SELECT * FROM bookmarks;')
     result.map do |bookmark|
@@ -19,9 +19,9 @@ class Bookmark
 
   def self.create(title:, url:)
     if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'bookmark_manager_test')
+      connection = PG.connect(dbname: 'bookmark_manager_test', user: 'postgres')
     else
-      connection = PG.connect(dbname: 'bookmark_manager')
+      connection = PG.connect(dbname: 'bookmark_manager', user: 'postgres')
     end
 
     result = connection.exec("INSERT INTO bookmarks(url, title)
