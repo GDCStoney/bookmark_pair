@@ -7,6 +7,7 @@ require './lib/bookmark'
 class BookmarkManager < Sinatra::Base
   get '/' do
     'Bookmark Manager'
+    redirect '/bookmarks'
   end
 
   get '/bookmarks' do
@@ -21,6 +22,12 @@ class BookmarkManager < Sinatra::Base
 
   get '/bookmarks/new' do
     erb :'bookmarks/new'
+  end
+
+  post '/bookmarks/delete' do
+    Bookmark.delete(id: params[:id])
+
+    redirect '/bookmarks'
   end
 
   run! if app_file == $PROGRAM_NAME

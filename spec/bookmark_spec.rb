@@ -7,7 +7,7 @@ require 'database_helpers'
 RSpec.describe Bookmark do
   describe 'class method #all' do
     it 'returns all bookmarks' do
-      connection = PG.connect(dbname: 'bookmark_manager_test', user: 'postgres')
+      connection = PG.connect(dbname: 'bookmark_manager_test')
 
       # Add the test data
       connection.exec("INSERT INTO bookmarks (id, title, url)
