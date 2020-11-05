@@ -37,4 +37,22 @@ RSpec.describe Bookmark do
       expect(bookmark.url).to eq 'http://www.testbookmark.com'
     end
   end
+
+  describe '#find' do
+    it 'finds the bookmark and returns an object' do
+      bookmark = Bookmark.create(url: 'http://www.testbookmark.com', title: 'Test Bookmark')
+      bookmark_found = Bookmark.find(id: bookmark.id)
+      expect(bookmark_found.title).to eq bookmark.title
+      expect(bookmark_found.url).to eq bookmark.url
+    end 
+  end 
+
+  describe '#update' do 
+    it 'it updates an existing bookmark' do 
+      bookmark = Bookmark.create(url: 'http://www.testbookmark.com', title: 'Test Bookmark')
+      updated_bookmark = Bookmark.update(id: bookmark.id, title: "Swizel was here", url: "http://www.swizelwashere.com")
+      expect(updated_bookmark.title).to eq "Swizel was here" 
+      expect(updated_bookmark.url).to eq "http://www.swizelwashere.com" 
+    end 
+  end 
 end
