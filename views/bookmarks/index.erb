@@ -1,21 +1,26 @@
 <html>
 <head></head>
 <body>
-  <ul>
+  <table>
   <% @bookmarks.each do |bookmark| %>
-    <li class='item'>
-      <form action='/bookmarks/delete' method='post'>
-        <input type='hidden' name='id' value='<%= bookmark.id %>'>
-        <input type='submit' value='Del'>
-      </form>
-      <form action='/bookmarks/update' method='get'>
-        <input type='hidden' name='id' value='<%= bookmark.id %>'>
-        <input type='submit' value='Edit'>
-      </form>
-      <a href='<%= bookmark.url %>'><%= bookmark.title %></a>
-
-    </li><br>
+    <tr>
+      <td style="width:40px; padding-top:10px; padding-bottom:10px">
+        <form style="margin-block-end:0px" action='/bookmarks/delete' method='post'>
+          <input type='hidden' name='id' value='<%= bookmark.id %>'>
+          <input type='submit' value='Del'>
+        </form>
+      </td>
+      <td style="width:40px; padding-top:10px; padding-bottom:10px">
+        <form style="margin-block-end:0px" action='/bookmarks/update' method='get'>
+          <input type='hidden' name='id' value='<%= bookmark.id %>'>
+          <input type='submit' value='Edit'>
+        </form>
+      </td>
+      <td style="padding-top:10px; padding-bottom:10px">
+        <a href='<%= bookmark.url %>'><%= bookmark.title %></a>
+      </td>
+    </tr>
   <% end %>
-  </ul>
+  </table>
 </body>
 </html>
