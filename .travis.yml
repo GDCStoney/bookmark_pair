@@ -5,7 +5,7 @@ services:
 
 before_script:
   - psql -c "CREATE DATABASE bookmark_manager;" -U postgres
-  - psql -c "\c bookmark_manager_test;" -U postgres
+  - psql -c "\c bookmark_manager;" -U postgres
   - psql -c "CREATE TABLE bookmarks (id SERIAL PRIMARY KEY, url VARCHAR(60), title VARCHAR(30));" -U postgres
 
 script:
