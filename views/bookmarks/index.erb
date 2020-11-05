@@ -2,13 +2,15 @@
 <head></head>
 <body>
   <table>
-  <% @bookmarks.each do |bookmark| %>
     <tr>
       <td style="width:40px; padding-top:10px; padding-bottom:10px">
         <form style="margin-block-end:0px" action='/bookmarks/new' method='post'>
           <input type='submit' value='Add'>
         </form>
       </td>
+    </tr>
+  <% @bookmarks.each do |bookmark| %>
+    <tr>
       <td style="width:40px; padding-top:10px; padding-bottom:10px">
         <form style="margin-block-end:0px" action='/bookmarks/delete' method='post'>
           <input type='hidden' name='id' value='<%= bookmark.id %>'>
