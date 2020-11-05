@@ -1,5 +1,8 @@
 language: ruby
 
+services:
+  -postgresql
+
 before_script:
   - psql -c "CREATE DATABASE bookmark_manager_test;" -U postgres
   - psql -c "CREATE USER foo WITH PASSWORD 'bar';" -U postgres
