@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'bookmark'
+require 'database_helpers'
 
 RSpec.describe Bookmark do
   describe 'class method #all' do
@@ -24,16 +25,15 @@ RSpec.describe Bookmark do
     end
   end
 
-  describe '#create' do
+  describe '#create - using database to verify' do
     it '- adds a bookmark to the database' do
       bookmark = Bookmark.create(url: 'http://www.testbookmark.com', title: 'Test Bookmark')
+      persisted_data = persisted_data(id: bookmark.id)
 
-      bookmarks = Bookmark.all
-
-      expect(bookmarks.size).to eq 1
-      expect(bookmarks.last.id).to eq bookmark[0]['id']
-      expect(bookmarks.last.url).to eq('http://www.testbookmark.com')
-      expect(bookmarks.last.title).to eq('Test Bookmark')
+      expect(bookmark).to be_a Bookmark
+      expect(bookmark.id).to eq persisted_data['id']
+      expect(bookmark.title).to eq 'Test Bookmark'
+      expect(bookmark.url).to eq 'http://www.testbookmark.com'
     end
   end
 end
