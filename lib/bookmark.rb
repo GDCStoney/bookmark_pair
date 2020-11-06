@@ -40,7 +40,7 @@ class Bookmark
 
     def self.connection_get
       if ENV['ENVIRONMENT'] == 'test'
-        PG.connect(dbname: 'bookmark_manager_test')
+        PG.connect(dbname: 'bookmark_manager_test', user: 'postgres')
       else
         PG.connect(dbname: 'bookmark_manager')
       end
