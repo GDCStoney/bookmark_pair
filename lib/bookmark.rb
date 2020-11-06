@@ -36,17 +36,17 @@ class Bookmark
     Bookmark.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
   end
 
+    def self.connection_get
+      if ENV['ENVIRONMENT'] == 'test'
+        PG.connect(dbname: 'bookmark_manager_test')
+      else
+        PG.connect(dbname: 'bookmark_manager')
+      end
+    end
+    
   def initialize(id:, title:, url:)
     @id = id
     @title = title
     @url = url
-  end
-
-  def self.connection_get
-    if ENV['ENVIRONMENT'] == 'test'
-      PG.connect(dbname: 'bookmark_manager_test')
-    else
-      PG.connect(dbname: 'bookmark_manager')
-    end
   end
 end
