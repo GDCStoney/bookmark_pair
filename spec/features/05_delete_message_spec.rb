@@ -2,6 +2,7 @@
 
 feature 'Delete message' do
   scenario 'user deletes existing message' do
+    
     enter_test_bookmark
     page.find_button('del').click
 

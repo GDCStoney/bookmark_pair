@@ -6,6 +6,8 @@ class Bookmark
   attr_reader :id, :url, :title
 
   def self.all
+    puts connection_get.exec('SELECT CURRENT_USER AS myself;')[0]
+    puts connection_get.exec('SELECT SESSION_USER AS myself;')[0]
     result = connection_get.exec('SELECT * FROM bookmarks ORDER BY id;')
     result.map do |bookmark|
       Bookmark.new(id: bookmark['id'], url: bookmark['url'], title: bookmark['title'])
@@ -43,7 +45,7 @@ class Bookmark
         PG.connect(dbname: 'bookmark_manager')
       end
     end
-    
+
   def initialize(id:, title:, url:)
     @id = id
     @title = title
