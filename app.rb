@@ -5,6 +5,8 @@ require './lib/bookmark'
 
 # main controller class object
 class BookmarkManager < Sinatra::Base
+
+
   get '/' do
     redirect '/bookmarks'
   end

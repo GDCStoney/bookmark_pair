@@ -5,7 +5,7 @@ services:
 
 before_script:
   - psql -c "CREATE DATABASE bookmark_manager_test;" -U travis
-  - psql -c "CREATE TABLE bookmarks (id SERIAL PRIMARY KEY, url VARCHAR(120), title VARCHAR(30));" -U travis
+  - psql -d bookmark_manager_test -c "CREATE TABLE bookmarks (id SERIAL PRIMARY KEY, url VARCHAR(120), title VARCHAR(30));" -U travis
   - psql -c "SELECT CURRENT_USER;" -U travis
   - psql -c "SELECT SESSION_USER;" -U travis
 
